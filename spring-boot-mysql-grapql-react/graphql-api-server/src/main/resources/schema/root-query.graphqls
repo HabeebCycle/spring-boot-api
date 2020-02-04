@@ -1,0 +1,17 @@
+# The Root Query for the application
+type Query {
+  book(id: ID) : Book,
+  author(id: ID) : Author,
+  books : [Book],
+  authors : [Author]
+}
+
+# The Root Mutation for the application
+type Mutation {
+  addAuthor(name: String!, age: Int) : Author,
+  addBook(name: String!, genre: String, author: ID!): Book,
+  updateBook(id: ID!, name: String!, genre: String, author: ID) : Book,
+  updateAuthor(id: ID!, name: String!, age: Int) : Author
+  deleteBook(id: ID!) : Book,
+  deleteAuthor(id: ID!) : Author
+}

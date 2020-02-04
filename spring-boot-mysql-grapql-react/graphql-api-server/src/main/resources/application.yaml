@@ -1,0 +1,21 @@
+## Server Properties
+server:
+    port: 5100
+
+spring:
+    ## Spring DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+    datasource:
+        url: jdbc:mysql://localhost:3308/graphql_app?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+        username: root
+        password:
+        initialization-mode: always         # Initialize the datasource with available DDL and DML scripts
+
+
+    ## Hibernate Properties
+    # The SQL dialect makes Hibernate generate better SQL for the chosen database
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL5InnoDBDialect
