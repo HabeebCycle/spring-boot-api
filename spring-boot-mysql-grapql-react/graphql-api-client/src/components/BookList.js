@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/react-hooks";
 
 import BookDetails from "./BookDetails";
 
-const BookList = () => {
+const BookList = (props) => {
 	const { loading, error, data } = useQuery(getBooksQuery);
 	const [selected, setSelected] = useState(null);
 
@@ -13,6 +13,7 @@ const BookList = () => {
 			return <div>Loading Books...</div>;
 		} else {
 			if (error) {
+				props.errorHandler(error.message);
 				return <div>{error.message}</div>;
 			}
 			return data.books.map(book => {

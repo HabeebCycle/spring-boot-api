@@ -25,7 +25,7 @@ public class QueryResolver implements GraphQLQueryResolver {
     }
 
     public Book getBook(Long id){
-        return dataService.getBook(id);
+        return id != null ? dataService.getBook(id) : null;
     }
 
     public List<Author> getAuthors(){
@@ -33,7 +33,7 @@ public class QueryResolver implements GraphQLQueryResolver {
     }
 
     public Author getAuthor(Long id){
-        return dataService.getAuthor(id);
+        return id != null ? dataService.getAuthor(id) : null;
     }
 
 

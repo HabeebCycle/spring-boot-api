@@ -47,7 +47,7 @@ public class DataService {
 
         Book book = new Book();
         book.setName(name);
-        book.setGenre(genre);
+        book.setGenre(!genre.isEmpty() ? genre : "General");
         book.setAuthor(bookAuthor);
         return bookRepository.save(book);
     }
