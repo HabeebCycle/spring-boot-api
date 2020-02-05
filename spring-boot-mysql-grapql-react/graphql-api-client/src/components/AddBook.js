@@ -68,6 +68,7 @@ const AddBook = (props) => {
 
 	return (
 		<form id="add-book" onSubmit={submitForm}>
+			<h3>Add New Book</h3>
 			<div className="field">
 				<label>*Book Name:</label>
 				<input type="text" ref={refNameInput} onChange={e => setName(e.target.value)} />

@@ -42,7 +42,7 @@ body{
   color: #880E4F;
 }
 
-form{
+form#add-book{
   background: #FFF;
   padding: 20px;
   position: fixed;
@@ -51,24 +51,24 @@ form{
   width: 400px;
 }
 
-form .field{
+form#add-book .field{
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
 }
 
-form label{
+form#add-book label{
   text-align: right;
   padding: 6px;
 }
 
-form select, form input{
+form#add-book select, form input{
   margin: 4px;
   padding: 6px;
   box-sizing: border-box;
 }
 
-form button{
+form#add-book button{
   color: #FFF;
   font-size: 2em;
   background: #AD1457;
@@ -80,6 +80,43 @@ form button{
   bottom: 10px;
   left: 10px;
 }
+
+form#add-author{
+  background: #FFF;
+  padding: 20px;
+  position: fixed;
+  right: 40%;
+  bottom: 0;
+  width: 400px;
+}
+
+form#add-author .field{
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  grid-gap: 10px;
+}
+
+form#add-author label{
+  text-align: right;
+  padding: 6px;
+}
+
+form#add-author button{
+  color: #FFF;
+  font-size: 2em;
+  background: #AD1457;
+  border: 0;
+  padding: 0 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+form h3{
+  margin-top: 0;
+}
+
 
 #book-details{
   position: fixed;

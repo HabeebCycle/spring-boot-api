@@ -5,6 +5,9 @@ import { ApolloProvider } from "@apollo/react-hooks";
 //components
 import BookList from "./components/BookList";
 import AddBook from "./components/AddBook";
+import AddAuthor from "./components/AddAuthor";
+import AuthorList from "./components/AuthorList";
+import ViewDetails from "./components/ViewDetails";
 
 //apollo client setup
 const client = new ApolloClient({
@@ -13,10 +16,15 @@ const client = new ApolloClient({
 
 function App() {
 
-	const[appError, setAppError] = useState("");
+	const[appError, setAppError] = useState("");	
+    const [selected, setSelected] = useState({});
 
-	const displayError = (err) => {
+	const displayError = err => {
 		setAppError(err);
+	}
+
+	const displayDetails = (type, id) => {
+		setSelected({type, id});
 	}
 
 	return (
@@ -27,8 +35,11 @@ function App() {
 					<p>{appError}</p>
 				</div>
 				
-				<BookList errorHandler={displayError}/>
+				<BookList errorHandler={displayError} detailsHandler={displayDetails}/>
+				<AuthorList errorHandler={displayError} detailsHandler={displayDetails}/>
 				<AddBook errorHandler={displayError}/>
+				<AddAuthor errorHandler={displayError}/>
+				<ViewDetails view={selected}/>
 			</div>
 		</ApolloProvider>
 	);
